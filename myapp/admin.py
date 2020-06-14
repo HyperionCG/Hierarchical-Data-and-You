@@ -1,7 +1,7 @@
 from django.contrib import admin
-from myapp.models import ModelName, AnotherModel
-admin.site.register(ModelName)
-admin.site.register(AnotherModel)
+from mptt.admin import DraggableMPTTAdmin
 
+from myapp.models import Car
+admin.site.register(Car, DraggableMPTTAdmin)
 
 # Register your models here.
