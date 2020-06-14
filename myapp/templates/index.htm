@@ -1,1 +1,14 @@
-<h1>Hello World</h1>
+{% load mptt_tags %}
+
+<ul class="root">
+    {% recursetree car %}
+        <li>
+            {{ node.make }}
+            {% if not node.is_leaf_node %}
+                <ul class="children">
+                    {{ children }}
+                </ul>
+            {% endif %}
+        </li>
+    {% endrecursetree %}
+</ul>
